@@ -6,7 +6,7 @@ class Battle < Sinatra::Base
   set :sessions, true
 
   get '/' do
-    "Hello battle!"
+    "Testing infrastructure working!"
   end
 
   run! if app_file == $0
