@@ -1,6 +1,5 @@
 class Player
-  attr_reader :health
-  attr_accessor :name, :attack
+  attr_reader :health, :name, :attack
 
   DEFAULT_HEALTH = 60
 

@@ -9,12 +9,15 @@
     background-color: #00eeff;
     border: 3px solid #ffaa00;
     padding: 5px;
+    margin: 30px;
     box-shadow: 0 0 10px 10px #ff00ff;
     width: 100px;
   }
 </style>
 
-<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
-<%= @game.player_2.name %>: <%= @game.player_2.health %>HP
+<p><%= @game.player_1.name %> vs. <%= @game.player_2.name %></p>
+<p><%= @game.current_turn.name %>'s turn</p>
+<p><%= @game.player_1.name %>: <%= @game.player_1.health %>HP</p>
+<p><%= @game.player_2.name %>: <%= @game.player_2.health %>HP</p>
 
 <a href='/attack'>attack!</a>
