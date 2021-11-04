@@ -14,7 +14,7 @@
   }
 </style>
 
-<%= @name_1 %> vs. <%= @name_2 %>
-<p><%= @name_2 %>: <%= @player_2_health %>HP</p> 
+<%= @game.player_1.name %> vs. <%= @game.player_2.name %>
+<%= @game.player_2.name %>: <%= @game.player_2.health %>HP
 
 <a href='/attack'>attack!</a>

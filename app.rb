@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'lib/player'
+require_relative './lib/game'
 
 class Battle < Sinatra::Base
   register Sinatra::Reloader
@@ -11,25 +12,20 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $player_1 = Player.new(params[:name_1])
-    $player_2 = Player.new(params[:name_2])
+    player_1 = Player.new(params[:name_1])
+    player_2 = Player.new(params[:name_2])
+    $game = Game.new(player_1, player_2)
     redirect '/play'
   end
 
   get '/play'do
-    @name_1 = $player_1.name
-    @name_2 = $player_2.name
-    @player_2_health = $player_2.health
+    @game = $game
     erb :play
   end
 
   get '/attack' do
-    @game = Game.new
-    @name_1 = $player_1.name
-    @name_2 = $player_2.name
-    @player_1 = $player_1
-    @player_2 = $player_2
-    @game.attack(@player_2)
+    @game = $game
+    @game.attack(@game.player_2)
     erb :attack
   end
 
