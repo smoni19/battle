@@ -3,13 +3,18 @@
   {
     background-color: #00aa66;
   }
+
+  p
+  {
+    background-color: #00eeff;
+    border: 3px solid #ffaa00;
+    padding: 5px;
+    box-shadow: 0 0 10px 10px #ff00ff;
+    width: 100px;
+  }
 </style>
 
 <%= @name_1 %> vs. <%= @name_2 %>
-<p style="background-color: #00eeff; border: 3px solid #ffaa00; padding: 5px; box-shadow: 0 0 10px 10px #ff00ff; width: 100px"><%= @name_2 %>: <%= @player_2_health %>HP</p> 
+<p><%= @name_2 %>: <%= @player_2_health %>HP</p> 
 
-<a href='/attack' >
-  <button class="GFG">
-    attack!
-  </button>
-</a>
+<a href='/attack'>attack!</a>
